@@ -1,0 +1,14 @@
+<h1>Products For <%=  @store.store_name %></h1>
+
+<table class = 'ui table'>
+<th>Product Name</th>
+<th>Product Price<th>
+<th>Product page<th>
+<% @store.products.each do |product|%>
+<tr>
+  <td><%= product.product_name%></td>
+<td>$<%= product.product_price%></td>
+<td><%= link_to "See More", store_product_path(@store, product)%></td>
+</tr>
+<% end %>
+</table>

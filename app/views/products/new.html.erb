@@ -1,0 +1,17 @@
+<h1>Products#new</h1>
+<h1>Add a Product</h1>
+
+<form class = 'ui form'>
+  <%= form_for [@store, @product] do |f| %>
+    <div class='field'>
+      <%= f.label :product_name%>
+      <%= f.text_field :product_name%>
+    </div>  
+    <div class='field'>
+      <%= f.label :product_price%>
+      <%= f.number_field :product_price%>
+    </div>  
+  
+     <button class="ui button"> <%= f.submit %></button>
+  <% end%>
+</form>
