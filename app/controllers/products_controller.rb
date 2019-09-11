@@ -10,12 +10,13 @@ class ProductsController < ApplicationController
   end
 
   def new
+    @product = @store.products.new
   end
 
   def create
-    @product = Product.new(product_params)
+    @product = @store.products.new(product_params)
     if @product.save
-      redirect_to store_path(@store)
+      redirect_to store_products_path(@store)
     else
       render :new
     end
@@ -26,7 +27,7 @@ class ProductsController < ApplicationController
 
   def update
     if @product.update(product_params)
-      redirect_to store_path(store.id)
+      redirect_to store_products_path(@store)
     else
       render :edit
     end
@@ -34,7 +35,7 @@ class ProductsController < ApplicationController
 
   def destroy
     @product.destroy
-    redirect_to store_path(@store)
+    redirect_to store_products_path(@store)
   end
 
   private

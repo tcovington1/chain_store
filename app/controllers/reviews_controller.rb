@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
   def index
+    @reviews = @product.reviews.all
   end
 
   def show

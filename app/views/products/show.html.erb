@@ -1,2 +1,6 @@
 <h1>Product Show</h1>
 
+<%= @product.product_name%>
+<%= link_to 'Edit Item', edit_store_product_path(@store) %>
+
+<%= link_to 'Delete', [@store, @product], method: :delete %>

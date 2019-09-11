@@ -1,5 +1,6 @@
 class StoresController < ApplicationController
   before_action :set_store, only: [:show, :update, :edit, :destroy]
+  # before_action :set_product, only: [:show]
   def index
     @stores = Store.all
   end

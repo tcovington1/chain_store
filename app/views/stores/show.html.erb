@@ -1,14 +1,9 @@
-<h1>Products For <%=  @store.store_name %></h1>
+<h1>Show page for: <%=  @store.store_name %></h1>
 
-<table class = 'ui table'>
-<th>Product Name</th>
-<th>Product Price<th>
-<th>Product page<th>
-<% @store.products.each do |product|%>
-<tr>
-  <td><%= product.product_name%></td>
-<td>$<%= product.product_price%></td>
-<td><%= link_to "See More", store_product_path(@store, product)%></td>
-</tr>
-<% end %>
-</table>
+<hr />
+<p>What would you like to do?</p>
+<%= link_to 'View products', store_products_path(@store) %>
+<br />
+<%= link_to 'Edit Store', edit_store_path(@store) %>
+<br />
+<%= link_to 'Delete Store', @store, method: :delete %>

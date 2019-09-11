@@ -1,8 +1,8 @@
 <h1>Products#new</h1>
 <h1>Add a Product</h1>
 
-<form class = 'ui form'>
-  <%= form_for [@store, @product] do |f| %>
+<div class = 'ui form'>
+  <%= form_for [@store, @product] do |f|%>
     <div class='field'>
       <%= f.label :product_name%>
       <%= f.text_field :product_name%>
@@ -12,6 +12,6 @@
       <%= f.number_field :product_price%>
     </div>  
   
-     <button class="ui button"> <%= f.submit %></button>
+     <%= f.submit %>
   <% end%>
-</form>
+<div>
