@@ -2,13 +2,13 @@
 <div class = 'ui form'>
 <%= form_for [@product, @review] do |f| %>
   <%= f.label :name %>
-  <%= f.text_area :name, required: true, placeholder: 'Leave Blank To Remain Anonymous'  %>
+  <%= f.text_field :name, required: true, placeholder: 'Leave Blank To Remain Anonymous'  %>
   <br />
   <%= f.label :subject %>
-  <%= f.text_area :subject %>
+  <%= f.text_field :subject %>
   <br />
   <%= f.label :message %>
-  <%= f.text_field :message %>
+  <%= f.text_area :message, placeholder: 'Write your review' %>
   <br />
   <%= f.submit %>
 <% end %>
