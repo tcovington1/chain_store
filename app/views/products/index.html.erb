@@ -1,4 +1,4 @@
-<h1>Products For <%=  @store.store_name %></h1>
+<h1 class='ui header'>Products For <%=  @store.store_name %></h1>
 
 <table class = 'ui table'>
 <thead>
@@ -14,7 +14,10 @@
 <% @store.products.each do |product|%>
 <tr>
   <td><%= product.product_name%></td>
-  <td>$<%= product.product_price%></td>
+  <td><div class="ui tag labels">
+            <a class="ui label">
+              $<%=product.product_price %>
+            </a></td>
   <td><%= link_to "See Reviews", product_reviews_path(product.id)%></td>
   <td><%= link_to "Edit Product", edit_store_product_path(@store, product.id)%></td>
   <td><%= link_to "Product Info", store_product_path(@store, product) %></td>

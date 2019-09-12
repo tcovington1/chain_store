@@ -1,2 +1,32 @@
-<h1>Reviews#index</h1>
-<p>Find me in app/views/reviews/index.html.erb</p>
+<br>
+<br>
+<h1 class='ui header'>Reviews form: <%= @product.product_name %></h1>
+  <div class="ui tag labels">
+            <a class="ui label">
+              $<%=@product.product_price %>
+            </a></<div>
+<hr>
+
+
+
+
+<div class="ui card">
+<% @product.reviews.each do |review| %>
+   
+  <div class="content">
+  <div class="header">Name: <%= review.name %></div>
+  <div>Subject: <%= review.subject %></div>
+  <div>Message: <%= review.message %></div>
+   <div class="extra content">
+    <span class="left floated like">
+      <i class="like icon"></i>
+      Like
+    </span>
+    <span class="right floated star">
+      <i class="star icon"></i>
+      Favorite
+    </span>
+  </div>
+<% end %>
+   
+</div>

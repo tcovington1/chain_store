@@ -1,2 +1,15 @@
-<h1>Reviews#new</h1>
-<p>Find me in app/views/reviews/new.html.erb</p>
+<h1>Add A review</h1>
+<div class = 'ui form'>
+<%= form_for [@product, @review] do |f| %>
+  <%= f.label :name %>
+  <%= f.text_area :name, required: true, placeholder: 'Leave Blank To Remain Anonymous'  %>
+  <br />
+  <%= f.label :subject %>
+  <%= f.text_area :subject %>
+  <br />
+  <%= f.label :message %>
+  <%= f.text_field :message %>
+  <br />
+  <%= f.submit %>
+<% end %>
+</div>
